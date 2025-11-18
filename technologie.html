@@ -2,41 +2,359 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Technologie internetu</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak funguje internet - Technologie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-box {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .protocol-box {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .future-box {
+            background: #f3e5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d32f2f;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Úvod</a></li>
+            <li><a href="jak-funguje.html">⚙️ Jak funguje</a></li>
+            <li><a href="#" class="active">💻 Technologie</a></li>
+        </ul>
+    </nav>
 
-<header>
-    <h1>💡 Technologie internetu</h1>
-    <p>Co tvoří jádro celého online světa.</p>
-</header>
+    <div class="container">
+        <div class="hero">
+            <div class="emoji">💻</div>
+            <h1>Technologie internetu</h1>
+            <p><strong>Protokoly, servery a moderní technologie</strong></p>
+        </div>
 
-<nav>
-    <a href="index.html">Domů</a>
-    <a href="jak-funguje.html">Jak to funguje</a>
-    <a href="technologie.html">Technologie</a>
-</nav>
+        <h2>📡 Protokoly – pravidla komunikace</h2>
+        <p>
+            Aby spolu počítače mohly komunikovat, musí mluvit stejným "jazykem". Tomuto jazyku 
+            říkáme <strong>protokol</strong> – je to soubor pravidel, jak data formátovat, 
+            přenášet a zpracovávat.
+        </p>
 
-<section class="card">
-    <h2>➡️ Optické kabely</h2>
-    <p>Extrémně rychlý přenos dat pomocí světla. Hlavní páteř internetu.</p>
-</section>
+        <h3>🌐 TCP/IP – základ internetu</h3>
+        <p>
+            <strong>TCP/IP</strong> (Transmission Control Protocol / Internet Protocol) je základní 
+            sada protokolů, na kterých stojí celý internet. Rozděluje se na dvě hlavní části:
+        </p>
 
-<section class="card">
-    <h2>➡️ Wi-Fi</h2>
-    <p>Bezdrátová komunikace mezi routerem a zařízeními.</p>
-</section>
+        <div class="protocol-box">
+            <h3>📦 IP (Internet Protocol)</h3>
+            <p>
+                <strong>Úkol:</strong> Adresování a směrování paketů<br>
+                <strong>Funkce:</strong> Zajišťuje, že každý paket ví, kam má jít (pomocí IP adres)
+            </p>
+        </div>
 
-<section class="card">
-    <h2>➡️ DNS 📛</h2>
-    <p>Telefonní seznam internetu. Převádí názvy webů na IP adresy.</p>
-</section>
+        <div class="protocol-box">
+            <h3>🔄 TCP (Transmission Control Protocol)</h3>
+            <p>
+                <strong>Úkol:</strong> Spolehlivý přenos dat<br>
+                <strong>Funkce:</strong> Kontroluje, že všechny pakety dorazily v správném pořadí 
+                a žádný se neztratil
+            </p>
+        </div>
 
-<section class="card">
-    <h2>➡️ Datacentra 🏢</h2>
-    <p>Obrovské haly plné serverů – tam "fyzicky" leží internet.</p>
-</section>
+        <h3>⚡ UDP – rychlá alternativa</h3>
+        <p>
+            <strong>UDP</strong> (User Datagram Protocol) je jednodušší než TCP. Neověřuje, zda 
+            pakety dorazily, ale je mnohem rychlejší. Používá se pro:
+        </p>
+        <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li>Videohovory (Zoom, Teams)</li>
+            <li>Online hry</li>
+            <li>Živé přenosy videa</li>
+        </ul>
 
+        <h2>🌍 HTTP/HTTPS – jazyk webu</h2>
+        <p>
+            <strong>HTTP</strong> (HyperText Transfer Protocol) je protokol, který používají webové 
+            prohlížeče pro komunikaci se servery. Jeho bezpečnější verze <strong>HTTPS</strong> 
+            přidává šifrování.
+        </p>
+
+        <table class="comparison-table">
+            <tr>
+                <th>HTTP</th>
+                <th>HTTPS</th>
+            </tr>
+            <tr>
+                <td>❌ Nešifrovaná komunikace</td>
+                <td>✅ Šifrovaná komunikace</td>
+            </tr>
+            <tr>
+                <td>❌ Data mohou být odposlechnuta</td>
+                <td>✅ Bezpečné přenášení hesel a údajů</td>
+            </tr>
+            <tr>
+                <td>⚠️ Neověřená identita serveru</td>
+                <td>✅ Certifikát ověřuje identitu webu</td>
+            </tr>
+        </table>
+
+        <h2>🖥️ Servery a datacentry</h2>
+        <p>
+            <strong>Server</strong> je počítač, který poskytuje služby nebo obsah jiným počítačům 
+            (klientům). Když otevřete webovou stránku, váš prohlížeč je klient a vzdálený počítač, 
+            který stránku odesílá, je server.
+        </p>
+
+        <div class="tech-box">
+            <h3>🏢 Typy serverů</h3>
+            <p><strong>Web servery:</strong> Poskytují webové stránky (Apache, Nginx)</p>
+            <p><strong>Email servery:</strong> Spravují a doručují emaily</p>
+            <p><strong>Databázové servery:</strong> Ukládají a spravují data aplikací</p>
+            <p><strong>DNS servery:</strong> Překládají doménová jména na IP adresy</p>
+            <p><strong>Cloud servery:</strong> Poskytují výpočetní výkon a úložiště (AWS, Azure, Google Cloud)</p>
+        </div>
+
+        <h3>🏭 Datacentry</h3>
+        <p>
+            Servery jsou umístěny v obrovských budovách zvaných <strong>datacentry</strong>. 
+            Obsahují tisíce serverů, které běží 24/7, zajišťují chlazení, záložní napájení 
+            a fyzickou bezpečnost.
+        </p>
+
+        <h2>📶 Typy připojení k internetu</h2>
+        
+        <div class="tech-box">
+            <h3>💾 DSL (Digital Subscriber Line)</h3>
+            <p>Používá telefonní linku, rychlost: 1-100 Mbps</p>
+        </div>
+
+        <div class="tech-box">
+            <h3>📺 Kabelový internet</h3>
+            <p>Přes televizní kabel, rychlost: 10-1000 Mbps</p>
+        </div>
+
+        <div class="tech-box">
+            <h3>💡 Optické připojení (Fiber)</h3>
+            <p>Nejrychlejší, používá světelné signály, rychlost: 100 Mbps - 10 Gbps</p>
+        </div>
+
+        <div class="tech-box">
+            <h3>📡 Satelitní internet</h3>
+            <p>Pro odlehlé oblasti, vyšší latence, rychlost: 12-100 Mbps</p>
+        </div>
+
+        <div class="tech-box">
+            <h3>📱 Mobilní internet (4G/5G)</h3>
+            <p>Bezdrátové připojení přes mobilní sítě, rychlost: 10 Mbps - 1 Gbps (5G)</p>
+        </div>
+
+        <h2>🔮 Budoucnost internetu</h2>
+        
+        <div class="future-box">
+            <h3>🛰️ Starlink a satelitní konstelace</h3>
+            <p>
+                Tisíce satelitů na nízké oběžné dráze mají přinést rychlý internet do celého světa, 
+                včetně odlehlých oblastí.
+            </p>
+        </div>
+
+        <div class="future-box">
+            <h3>🌐 IPv6</h3>
+            <p>
+                Nová verze IP protokolu s prakticky neomezeným množstvím IP adres 
+                (340 undecilionů adres!), což umožní připojit každé zařízení na planetě.
+            </p>
+        </div>
+
+        <div class="future-box">
+            <h3>⚡ 5G a 6G sítě</h3>
+            <p>
+                Ultrarychlé mobilní sítě s nízkou latencí umožní pokročilé aplikace jako 
+                autonomní vozidla, telemedicína a rozšířená realita.
+            </p>
+        </div>
+
+        <div class="future-box">
+            <h3>🔐 Kvantový internet</h3>
+            <p>
+                Využití kvantové mechaniky pro absolutně bezpečnou komunikaci, která nemůže 
+                být odposlechnuta bez detekce.
+            </p>
+        </div>
+
+        <h2>📊 Zajímavá čísla</h2>
+        <div class="tech-box">
+            <p>🌍 <strong>5,4 miliardy</strong> uživatelů internetu na světě</p>
+            <p>📱 <strong>60%</strong> internetového provozu pochází z mobilních zařízení</p>
+            <p>💾 <strong>3,2 zetabajty</strong> dat bylo vytvořeno v roce 2024</p>
+            <p>⚡ <strong>2 900 000 km</strong> podmořských kabelů propojuje kontinenty</p>
+            <p>🔍 <strong>8,5 miliard</strong> vyhledávání denně na Googlu</p>
+        </div>
+
+        <div class="protocol-box">
+            <h3>✅ Závěrem</h3>
+            <p>
+                Internet je komplexní systém postavený na mnoha vrstvách technologií – od fyzických 
+                kabelů a serverů až po protokoly a aplikace. Díky standardizovaným protokolům jako 
+                TCP/IP může kdokoli připojit své zařízení a stát se součástí této globální sítě. 
+                S rozvojem technologií jako 5G, IPv6 a kvantový internet se možnosti internetu 
+                neustále rozšiřují.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Školní projekt | Vytvořeno pomocí AI</p>
+    </footer>
 </body>
 </html>

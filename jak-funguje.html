@@ -2,45 +2,265 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Jak internet funguje</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak funguje internet - Princip fungování</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #2196f3;
+        }
+
+        .step-box {
+            background: #f3e5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Úvod</a></li>
+            <li><a href="#" class="active">⚙️ Jak funguje</a></li>
+            <li><a href="technologie.html">💻 Technologie</a></li>
+        </ul>
+    </nav>
 
-<header>
-    <h1>⚙️ Jak internet funguje</h1>
-    <p>Zjednodušený technický pohled.</p>
-</header>
+    <div class="container">
+        <div class="hero">
+            <div class="emoji">⚙️</div>
+            <h1>Jak funguje internet</h1>
+            <p><strong>Základní principy fungování sítě sítí</strong></p>
+        </div>
 
-<nav>
-    <a href="index.html">Domů</a>
-    <a href="jak-funguje.html">Jak to funguje</a>
-    <a href="technologie.html">Technologie</a>
-</nav>
+        <h2>🔌 Základní princip</h2>
+        <p>
+            Internet funguje na jednoduchém principu: počítače a další zařízení jsou vzájemně propojeny 
+            a vyměňují si mezi sebou data. Tato data putují ve formě malých balíčků informací přes 
+            složitou síť kabelů, routerů a serverů.
+        </p>
 
-<section class="card">
-    <h2>📦 Přenos dat (packety)</h2>
-    <p>Internet neposílá data najednou. Všechno se rozbije na malé části zvané packety, které putují po síti různými cestami.</p>
-</section>
+        <div class="info-box">
+            <h3>💡 Klíčová myšlenka</h3>
+            <p>
+                Internet není magická cloud v oblacích – je to fyzická infrastruktura tisíců kilometrů 
+                kabelů (včetně podmořských!), serverů a přepínačů, které společně tvoří globální síť.
+            </p>
+        </div>
 
-<section class="card">
-    <h2>🖥️ Servery</h2>
-    <p>Servery ukládají weby, aplikace a služby. Když zadáš adresu stránky, server pošle odpověď zpět k tobě.</p>
-</section>
+        <h2>📦 Co jsou datové pakety?</h2>
+        <p>
+            Když posíláte email nebo načítáte webovou stránku, data se nerozesilají jako jeden souvislý 
+            proud. Místo toho se rozdělí na malé kousky zvané <strong>datové pakety</strong>.
+        </p>
 
-<section class="card">
-    <h2>📡 Routery</h2>
-    <p>Routery řídí směr dat. Jsou jako dopravní značky určující cestu packetů.</p>
-</section>
+        <h3>Proč pakety?</h3>
+        <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li><strong>Efektivita:</strong> Více paketů může cestovat různými cestami současně</li>
+            <li><strong>Spolehlivost:</strong> Když se jeden paket ztratí, stačí poslat znovu jen ten jeden</li>
+            <li><strong>Flexibilita:</strong> Síť se lépe přizpůsobuje zátěži a problémům</li>
+        </ul>
 
-<section class="card">
-    <h2>📘 Protokoly</h2>
-    <ul>
-        <li><strong>HTTP/HTTPS</strong> – webové stránky</li>
-        <li><strong>TCP</strong> – aby došla všechna data</li>
-        <li><strong>IP</strong> – adresy zařízení</li>
-    </ul>
-</section>
+        <div class="step-box">
+            <h3>📨 Cesta datového paketu</h3>
+            <p><strong>1. Odeslání:</strong> Váš počítač rozdělí data na pakety a přidá k nim adresu příjemce (IP adresu)</p>
+            <p><strong>2. Směrování:</strong> Routery (směrovače) určují nejlepší cestu pro každý paket</p>
+            <p><strong>3. Přenos:</strong> Pakety cestují přes různé sítě a zařízení</p>
+            <p><strong>4. Doručení:</strong> Cílový počítač pakety přijme a složí zpět do původní podoby</p>
+        </div>
 
+        <h2>🏠 IP adresy a DNS</h2>
+        <p>
+            Každé zařízení připojené k internetu má svou unikátní <strong>IP adresu</strong> – je to 
+            jako poštovní adresa v digitálním světě. Vypadá například takto: <code>192.168.1.1</code> 
+            nebo <code>2001:0db8:85a3::8a2e:0370:7334</code>
+        </p>
+
+        <h3>🔍 DNS – Telefonní seznam internetu</h3>
+        <p>
+            Pamatovat si číselné IP adresy by bylo složité, proto existuje <strong>DNS</strong> 
+            (Domain Name System). DNS překládá srozumitelná doménová jména jako 
+            <code>www.google.com</code> na IP adresy, které počítače skutečně používají.
+        </p>
+
+        <div class="info-box">
+            <h3>🔄 Jak DNS funguje:</h3>
+            <p>1. Napíšete <code>www.seznam.cz</code> do prohlížeče</p>
+            <p>2. Váš počítač se zeptá DNS serveru: "Jaká je IP adresa pro seznam.cz?"</p>
+            <p>3. DNS server odpoví: "77.75.79.53"</p>
+            <p>4. Váš prohlížeč se připojí na tuto IP adresu a načte stránku</p>
+        </div>
+
+        <h2>🛣️ Routery a směrování</h2>
+        <p>
+            <strong>Routery</strong> jsou jako křižovatky internetu. Jejich úkolem je určit, kudy mají 
+            datové pakety cestovat, aby se co nejrychleji dostaly k cíli.
+        </p>
+
+        <h3>Jak router rozhoduje?</h3>
+        <p>
+            Router má tabulku, která mu říká, kterým směrem poslat pakety určené pro různé IP adresy. 
+            Vybírá nejrychlejší dostupnou cestu a pokud jedna cesta nefunguje, automaticky zvolí jinou.
+        </p>
+
+        <div class="warning-box">
+            <h3>⚡ Zajímavost</h3>
+            <p>
+                Datové pakety z vašeho počítače do serveru na druhé straně světa mohou projít přes 
+                15-20 různých routerů! Přesto to celé trvá jen zlomky sekundy.
+            </p>
+        </div>
+
+        <h2>🔐 Bezpečnost komunikace</h2>
+        <p>
+            Protože data cestují přes mnoho různých sítí a zařízení, je důležité je chránit. 
+            K tomu slouží šifrování – proces, který převádí čitelná data na nečitelnou podobu.
+        </p>
+
+        <h3>HTTPS a SSL/TLS</h3>
+        <p>
+            Když vidíte v prohlížeči zámek a <code>https://</code> před adresou webu, znamená to, 
+            že komunikace je šifrovaná. Protokoly SSL/TLS zajišťují, že nikdo po cestě nemůže číst 
+            vaše osobní údaje, hesla nebo platební informace.
+        </p>
+
+        <div class="step-box">
+            <h3>✅ Shrnutí</h3>
+            <p>
+                Internet funguje jako obří poštovní systém: data se rozdělí na pakety s adresou, 
+                routery je směrují po nejlepší cestě a DNS překládá názvy na adresy. Vše je rychlé, 
+                efektivní a (díky šifrování) bezpečné.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Školní projekt | Vytvořeno pomocí AI</p>
+    </footer>
 </body>
 </html>
